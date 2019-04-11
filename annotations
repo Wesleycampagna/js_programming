@@ -1,0 +1,95 @@
+function podem ser alocadas em uma variavel - esqueça que uma variavel so possa ter inteiro, char, string ...
+
+pode ser passado para uma function um parametro que é a variavel de outra function(até 19 de outubro não fazia sentido pelo
+fato de também poder-se-ia fazer a chamada dentro da própria function)
+--> esquece o não entendimento de passar function como parametro
+var impostaA = function (value) { return value * 0.15}
+var impostaB = function (value) { return value * 0.18}
+
+na chamda de uma função que calcula o valor total: 
+    function calculateTax(objProduct, funcTax) { return objProduct.preco + funcTax(objProduct)}
+há a possibilidade de funcTax receber impostaA ou impostaB e na chamada já ser diferente o resultado das duas. 
+    calculateTax(objProduct, impostaA)
+    calculateTax(objProduct, impostaB)
+
+Em java como seria...
+passaria diretamente a taxa como parametro.. O que ao final ainda não muda muito o efeito imprencidivel disto 
+Algo como 
+static final int TAX_1 = 0.015;
+static final int TAX_2 = 0.018;
+
+    int calculateTax(Object objProduct, int tax) { return objProduct.preco + (objProduct.preco * tax)}
+
+chamada:
+    class.calculateTax(objProduct, class.TAX_1);
+    class.calculateTax(objProduct, class.TAX_2);
+
+há a possibilidade de abrir objects dentro do parametro da function, muitas vezes não é necessario ter pré-alocado este 
+object
+
+
+-----------------------------------------------------------------------------------------------------------------------
+
+Object java vs. javascript
+
+DECLARAÇÂO:
+Em js:
+    var Pessoa = {}
+Em java:
+    public class Pessoa{}
+
+Por enquanto lembram um pouco.
+
+ATRIBUTOS:
+Em js:
+
+Em java:
+
+X:
+Em js:
+    var Pessoa = {
+        name: "Wesley",
+        age: 18
+    }
+Em java:
+    public class Pessoa{
+        String name = "Wesley";
+        int age = 18;
+    }
+MÉTODOS:
+Em js:
+    var Pessoa = {
+        name: "Wesley",
+        age: 18,
+
+        getName: function (){ return this.nome}  //importante o this
+    }
+Em java:
+    public class Pessoa{
+        String name = "Wesley";
+        int age = 18;
+
+        String getName() { return this.name; }
+    }
+
+-------------------------------------------------------------------------------------------------------------------
+
+importante:
+
+se for utilizar um object que tem um dos seus dicionarios recebendo um var que representa uma function 
+tomar cuidade com a ordem. A variavel do método deve vir sempre antes. 
+Isto vale para o nome da variavel prestar atenção ao que esta da direita do dicionario.
+
+-------------------------------------------------------------------------------------------------------------------
+
+importante:
+funções Fábricas não usam letra maiuscula apenas Funções Construtoras (new)
+var jao = createPessoa("jão", 40)   --> normal
+var jao = new Pessoa("jão", 40)     --> maiuscula
+
+criação do object fabrica é var <nome> = function (<parametros>) { return { <dicionarios> } }
+criação do object Constructor é var <nome> = function (<parametros>) { this.<atributoObject> = <parametros> }
+
+-------------------------------------------------------------------------------------------------------------------
+
+
