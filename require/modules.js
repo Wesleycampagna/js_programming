@@ -5,11 +5,13 @@
 var max = 10000
 
 //definindo primeira function to transport for other js
+/* export function generate(){
+    return Math.floor(Math.random() * max)
+} */
+
 exports.generate = function(){
     return Math.floor(Math.random() * max)
 }
 
-module.exports = {
-    generate: max
-}
+exports.generateConst = max;
 
