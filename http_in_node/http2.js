@@ -27,14 +27,13 @@ var server = http.createServer( (request, response) => {
 
 /* não concluso:
 
-Um método de callback nada mais é um função encaminhada ao event loop com um fim predestinado, 
-onde a function passada por parametro vai realizar uma tarefa sobre aquele evento qndo do 
-seu retorno/conclusão. 
+Um método de callback nada mais é que um função encaminhada ao event loop com um fim pré-designado, 
+a função passada por parametro vai realizar uma tarefa sobre aquele evento quando do seu retorno/conclusão. 
 
 Logo listen(3000, (port) => { console.log('server at port: ' + port)})
 
-siginifica que após ele concluir o socket e bind da porta, ele conseguiu ficar disponivel para 
-ouvir na porta 3000, e assim, posteriormente, exibir a mensagem do método passado no parametro
+siginifica que após ele concluir o socket e bind da porta, onde conseguiu ficar disponivel para 
+ouvir na porta 3000, exibe, porsteriormente, a mensagem do método passado no parametro.
 */
 
 server.listen(4000, () => {
