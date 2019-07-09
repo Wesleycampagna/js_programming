@@ -11,6 +11,7 @@ router.use(async (req, res, next) => {
 
     // até posso usar o res.send, but, therefore, não permite um segundo envio ao cliente 
     // logo utilizar o método use serve apenas para servidor 
+    // vale essaltar que o use faz uso do modulo, executa-o
     //res.send('teste')
     next()
 })
@@ -31,6 +32,7 @@ router.get('/', (request, response) => {
 
 router.get('/t', (req, res) => {
     console.log('that!!')
+    res.status(500).json('oh man 500')
 })
 
 module.exports = router;

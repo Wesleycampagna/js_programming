@@ -17,6 +17,11 @@ main.use(express.static(__dirname + '/public'))
 // com use consigo consumir o exports in routes
 main.use('/', routes)
 
-main.listen(7070, () => {
-    console.log('server rodando')
+
+const port = process.env.PORT || 7070
+
+console.log(process.env.PORT);
+
+main.listen( port, () => {
+    console.log('server rodando:' + port)
 })
