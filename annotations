@@ -92,4 +92,8 @@ criação do object Constructor é var <nome> = function (<parametros>) { this.<
 
 -------------------------------------------------------------------------------------------------------------------
 
+sempre achei estranho a possibilidade de criar variaveis sem let, const ou var 
+--> razão: escopo GLOBAL
 
+são variaveis que em qualquer local da aplicação podem ser acessadas.
+Tomar cuidade quando disto - questões de segurança

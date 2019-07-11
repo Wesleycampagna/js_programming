@@ -25,6 +25,8 @@ var server = http.createServer( (request, response) => {
     response.end()
 })
 
+/* faça o teste por exemplo de: http://localhost:4000/jao/xxt/?variableOne=15&variableTwo=oiTudoBem */
+
 /* não concluso:
 
 Um método de callback nada mais é que um função encaminhada ao event loop com um fim pré-designado, 

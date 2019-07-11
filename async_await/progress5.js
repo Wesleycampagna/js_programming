@@ -3,8 +3,8 @@ const fs = require('fs')
 const obj = {}
 
 const readFileA = async () => {
-    fs.readFile('file-descrybe1.txt', (err, data) => {
-        !err ? resolve(data.toString()) : console.log('error')
+    return fs.readFile('file-descrybe1.txt', (err, data) => {
+        !err ? data.toString() : console.log('error')
     })  
 }
 
@@ -15,8 +15,8 @@ const main = async() => {
 }
 
 const readFileB = async () => {
-    fs.readFile('file-descrybe2.txt', (err, data) => {
-        !err ? resolve(data.toString()) : console.log('error')
+    return fs.readFile('file-descrybe2.txt', (err, data) => {
+        !err ? data.toString() : console.log('error')
     })  
 }
 

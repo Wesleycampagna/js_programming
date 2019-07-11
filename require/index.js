@@ -13,3 +13,6 @@ console.log(SerialGenerator.generate())
 
 //segundo método dentro do SerialGenerator
 //console.log(SerialGenerator.generateUntilTen())
+
+console.log(SerialGenerator)
+//SerialGenerator.method()
